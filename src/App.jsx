@@ -20,11 +20,19 @@ function App() {
     }
   ])
 
-  console.log(todos);
+  const styles = {
+    container: {
+      textAlign: 'center',
+      padding: '12px',
+    },
+    title: {
+      fontSize: '36px',
+    },
+  }
 
   return (
-    <div>
-      <h1>My Todo List</h1>
+    <div style={styles.container}>
+      <h1 style={styles.title}>My Todo List</h1>
       <Todos todos={todos} />
     </div>
   )

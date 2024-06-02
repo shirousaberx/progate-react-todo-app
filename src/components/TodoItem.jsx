@@ -1,4 +1,6 @@
-import React from 'react';
+// Lakukan import hook "useContext" dari React dan "TodoContext" dari App.jsx
+import React, { useContext } from 'react'
+import { TodoContext } from '../App'
 
 const styles = {
   todoItem: {
@@ -26,7 +28,9 @@ const styles = {
 }
 
 
-const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
+const TodoItem = ({ todo }) => {
+	const {toggleCompleted, deleteTodo} = useContext(TodoContext);
+
 	const getTodoTitleStyle = () => {
 		if (todo.completed === true) {
 			return { textDecoration: 'line-through' };
@@ -34,7 +38,6 @@ const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
 			return { textDecoration: 'none' };
 		}
 	}
-
 
 	return (
 		<div style={styles.todoItem}>
